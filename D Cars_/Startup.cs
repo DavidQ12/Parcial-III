@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using D_Cars_.Context;
+
 using D_Cars_.CONTEXT;
 
 namespace D_Cars_
@@ -27,10 +27,10 @@ namespace D_Cars_
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<D_Cars_Context>(options => options.UseSqlServer(Configuration.GetConnectionString("D_Cars_Context")));
+            services.AddDbContext<D_CarsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("D_Cars_Context")));
 
-            services.AddDbContext<D_CarsContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("D_CarsContext")));
+            /*services.AddDbContext<D_CarsContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("D_CarsContext")));*/
 
         }
 
